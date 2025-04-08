@@ -18,6 +18,8 @@
 		048C600F2DA50E6F00AF2574 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C60082DA50E6F00AF2574 /* AddTransactionView.swift */; };
 		048C60122DA50E8300AF2574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C60102DA50E8300AF2574 /* Assets.xcassets */; };
 		048C60132DA50E8300AF2574 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C60112DA50E8300AF2574 /* Colors.xcassets */; };
+		048C601A2DA515FA00AF2574 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 048C60192DA515FA00AF2574 /* RealmSwift */; };
+		048C601B2DA515FA00AF2574 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 048C60192DA515FA00AF2574 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,20 @@
 			remoteInfo = IncomeRealm;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		048C60182DA515F300AF2574 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				048C601B2DA515FA00AF2574 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		048C5FD22DA50DCA00AF2574 /* IncomeRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncomeRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048C601A2DA515FA00AF2574 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 			children = (
 				048C5FD42DA50DCA00AF2574 /* IncomeRealm */,
 				048C5FD32DA50DCA00AF2574 /* Products */,
+				048C60142DA515F300AF2574 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +157,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		048C60142DA515F300AF2574 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,12 +174,16 @@
 				048C5FCE2DA50DCA00AF2574 /* Sources */,
 				048C5FCF2DA50DCA00AF2574 /* Frameworks */,
 				048C5FD02DA50DCA00AF2574 /* Resources */,
+				048C60182DA515F300AF2574 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = IncomeRealm;
+			packageProductDependencies = (
+				048C60192DA515FA00AF2574 /* RealmSwift */,
+			);
 			productName = IncomeRealm;
 			productReference = 048C5FD22DA50DCA00AF2574 /* IncomeRealm.app */;
 			productType = "com.apple.product-type.application";
@@ -618,6 +647,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		048C60192DA515FA00AF2574 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048C5FFF2DA50E3100AF2574 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 048C5FCA2DA50DCA00AF2574 /* Project object */;
 }

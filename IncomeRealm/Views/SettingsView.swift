@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct SettingsView: View {
     
     @AppStorage("orderDescending") var orderDescending = false
@@ -47,6 +48,6 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    SettingsView()
-}
+//#Preview {
+//    SettingsView()
+//}
