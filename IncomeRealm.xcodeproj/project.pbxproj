@@ -20,6 +20,7 @@
 		048C60132DA50E8300AF2574 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C60112DA50E8300AF2574 /* Colors.xcassets */; };
 		048C601A2DA515FA00AF2574 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 048C60192DA515FA00AF2574 /* RealmSwift */; };
 		048C601B2DA515FA00AF2574 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 048C60192DA515FA00AF2574 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		04DE20B92DA52D2600ACE3EA /* EditTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE20B82DA52D2600ACE3EA /* EditTransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		048C60082DA50E6F00AF2574 /* AddTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		048C60102DA50E8300AF2574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048C60112DA50E8300AF2574 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		04DE20B82DA52D2600ACE3EA /* EditTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				048C60062DA50E6F00AF2574 /* SettingsView.swift */,
 				048C60072DA50E6F00AF2574 /* HomeView.swift */,
 				048C60082DA50E6F00AF2574 /* AddTransactionView.swift */,
+				04DE20B82DA52D2600ACE3EA /* EditTransactionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				048C600E2DA50E6F00AF2574 /* HomeView.swift in Sources */,
 				048C5FD62DA50DCA00AF2574 /* IncomeRealmApp.swift in Sources */,
 				048C600C2DA50E6F00AF2574 /* TransactionView.swift in Sources */,
+				04DE20B92DA52D2600ACE3EA /* EditTransactionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

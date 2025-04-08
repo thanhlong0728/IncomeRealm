@@ -1,6 +1,6 @@
 //
-//  AddTransactionView.swift
-//  Income
+//  EditTransactionView.swift
+//  IncomeRealm
 //
 //  Created by Mac on 08/04/2025.
 //
@@ -8,18 +8,18 @@
 import SwiftUI
 import RealmSwift
 
-struct AddTransactionView: View {
+struct EditTransactionView: View {
+    
     @State private var amount = 0.0
     @State private var transactionTitle = ""
     @State private var selectedTransactionType: TransactionType = .expense
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showAlert = false
-    @ObservedResults(TransactionModel.self) var transactions
+    @ObservedRealmObject var transactionToEdit: TransactionModel
     @Environment(\.dismiss) var dismiss
     
     @AppStorage("currency") var currency = Currency.usd
-    
     var numberFormatter: NumberFormatter {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
@@ -55,13 +55,27 @@ struct AddTransactionView: View {
                     showAlert = true
                     return
                 }
-
-                let transaction = TransactionModel(_id: ObjectId(), title: transactionTitle, type: selectedTransactionType, amount: amount, date: Date())
-                $transactions.append(transaction)
+                guard  let realm = transactionToEdit.realm?.thaw() else{
+                    alertTitle = "Ooops"
+                    alertMessage = "Transaction could not be edited right now"
+                    showAlert = true
+                    return
+                }
+                do {
+                    try realm.write {
+                        transactionToEdit.thaw()?.title = transactionTitle
+                        transactionToEdit.thaw()?.amount = amount
+                        transactionToEdit.thaw()?.type = selectedTransactionType
+                    }
+                } catch {
+                    alertTitle = "Ooops"
+                    alertMessage = "Transaction could not be edited right now"
+                    showAlert = true
+                }
                 dismiss()
                 
             }, label: {
-                Text("Create")
+                Text("Update")
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.white)
                     .frame(height: 40)
@@ -74,6 +88,11 @@ struct AddTransactionView: View {
             .padding(.horizontal, 30)
             Spacer()
         }
+        .onAppear(perform: {
+            amount = transactionToEdit.amount
+            selectedTransactionType = transactionToEdit.type
+            transactionTitle = transactionToEdit.title
+        })
         .padding(.top)
         .alert(alertTitle, isPresented: $showAlert) {
             Button(action: {
@@ -89,5 +108,5 @@ struct AddTransactionView: View {
 }
 
 //#Preview {
-//    AddTransactionView(transactions: .constant([]))
+//    EditTransactionView()
 //}
